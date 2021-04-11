@@ -52,6 +52,24 @@ const personGenerator = {
         }
     }`,
 
+    months: `{
+        "count": 12,
+        "list": {
+            "id_1": "января",
+            "id_2": "февраля",
+            "id_3": "марта",
+            "id_4": "апреля",
+            "id_5": "мая",
+            "id_6": "июня",
+            "id_7": "июля",
+            "id_8": "августа",
+            "id_9": "сентября",
+            "id_10": "октября",
+            "id_11": "ноября",
+            "id_12": "декабря"
+        }
+    }`,
+
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
 
@@ -83,13 +101,59 @@ const personGenerator = {
         return this.randomIntNumber() == 0 ? this.GENDER_MALE : this.GENDER_FEMALE;
     },
 
+    getBirthDAy: function() {
+        let year = this.randomIntNumber(2003, 1921); //c 2003 г. - совершеннолетние
+        let day;
+        let month = this.randomValue(this.months);
+        switch (month) {
+            case 'января': day = this.randomIntNumber(31, 1);
+                break;
+            case 'марта': day = this.randomIntNumber(31, 1);
+                break;
+            case 'мая': day = this.randomIntNumber(31, 1);
+                break;
+            case 'июля': day = this.randomIntNumber(31, 1);
+                break;
+            case 'августа': day = this.randomIntNumber(31, 1);
+                break;
+            case 'октября': day = this.randomIntNumber(31, 1);
+                break;
+            case 'декабря': day = this.randomIntNumber(31, 1);
+                break;
+            case 'апреля': day = this.randomIntNumber(30, 1);
+                break;
+            case 'июня': day = this.randomIntNumber(30, 1);
+                break;
+            case 'сентября': day = this.randomIntNumber(30, 1);
+                break;
+            case 'ноября': day = this.randomIntNumber(30, 1);
+                break;
+            case 'февраля': {
+                    if (this.isLeapYear(year)) {
+                        day = this.randomIntNumber(29, 1);
+                    } else {
+                        day = this.randomIntNumber(28, 1);
+                    }
+                }
+                break;
+        }
+        return `${day} ${month} ${year} года рождения`;
+    },
+
+    //Проверка на високосный год
+    isLeapYear: function(year) {
+        if (year % 4 == 0 && year % 400 == 0 && year % 100 != 0) {
+            return true;
+        }
+        return false;
+    },
 
     getPerson: function () {
         this.person = {};
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
         this.person.surname = this.person.gender == 'Женщина' ? this.randomSurname() + 'а' : this.randomSurname();
-        this.person.birthYear = this.randomIntNumber(2003, 1921) + ' года рождения'; //c 2003 г. - совершеннолетние
+        this.person.birthDay = this.getBirthDAy();
         this.person.patronymic = patronymicGenerator.randomPatronymic();
         this.person.profession = professionGenerator.randomProfession();
         
