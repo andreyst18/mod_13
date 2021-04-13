@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap');
+
+html, body {
+    height: 100%;
+}
+
+.generate, .generate:focus {
+    background-color: #7FFFD4;
+    color: black;
+}
+
+ .clear, .clear:focus {
+    background-color: #FFF8DC;
+    color: black;
+}
+
+.btn {
+    outline: none;
+}
+
+.game-field {
+    height: 100%;
+}
+
+.generate, .clear {
+    border: none;
+    width: 50%;
+    font-weight: 600;
+}
+
+.generate:hover {
+    background-color: #00FA9A;
+}
+
+.clear:hover {
+    background-color: #f9c795;
+}
+
+.btn:focus {
+    outline: 0!important;
+    outline-color: transparent!important;
+    outline-width: 0!important;
+    outline-style: none!important;
+    box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+} 
+
+.buttons {
+    width: 90%;
+}
+
+.game_field {
+    margin: 0%;
+}
+
+.card {
+    width: 500px;
+    height: 250px;
+}
+
+.card-header, .card-footer {
+    background-color: #87CEEB;
+}
+
+.card-body, .card-header, .card-footer {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+

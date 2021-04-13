@@ -9,26 +9,32 @@
     <link rel="stylesheet" href="style.css" type="text/css"/>
 </head>
 <body>
-<div class="container">
-    <div class="row game-card align-items-center">
-        <div class="col col-md-6 offset-md-3">
-            <div class="card text-center">
+<div class="container-fluid d-flex h-100 justify-content-center align-items-center">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3 game_field">
+            <div class="card text-center ">
                 <div class="card-header">
                     <p class="m-0">Окно результатов генерации</p>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <h3 class="card-title"><span id="surnameOutput">Генерация фамилии</span></h3>
-                            <h4><!--Имя:--> <span id="firstNameOutput">Иван</span> <span id="patronymicOutput">Иванович</span></h4>
+                            <h3 class="card-title"><span id="surnameOutput"></span></h3>
+                            <h4><!--Имя:--> <span id="firstNameOutput"></span> <span id="patronymicOutput"></span></h4>
                             <p>
-                                <span id="genderOutput">Генерация пола</span>
-                                <span>, </span>
-                                <span id="birthYearOutput">Генерация года рождения</span>
-                                <span>, </span>
-                                <span id="professionOutput">Генерация професии</span>
+                                <span id="genderOutput"></span>
+                                <span> </span>
+                                <span id="birthYearOutput"></span>
+                                <span> </span>
+                                <span id="professionOutput"></span>
                             </p>
                         </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group buttons" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-light generate" id="generate_button">Сгенерировать данные</button>
+                        <button type="button" class="btn btn-light clear" id="clear_button">Очистить данные</button>
                     </div>
                 </div>
             </div>
